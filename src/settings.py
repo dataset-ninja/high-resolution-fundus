@@ -48,7 +48,10 @@ DOWNLOAD_ORIGINAL_URL: Optional[
 ] = "https://www5.cs.fau.de/fileadmin/research/datasets/fundus-images/all.zip"
 # Optional link for downloading original dataset (e.g. "https://some.com/dataset/download")
 
-CLASS2COLOR: Optional[Dict[str, List[str]]] = None
+CLASS2COLOR: Optional[Dict[str, List[str]]] = {
+    "vessels": [230, 25, 75],
+    "field of view": [60, 180, 75],
+}
 # If specific colors for classes are needed, fill this dict (e.g. {"class1": [255, 0, 0], "class2": [0, 255, 0]})
 
 # If you have more than the one paper, put the most relatable link as the first element of the list
