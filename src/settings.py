@@ -77,27 +77,14 @@ AUTHORS_CONTACTS: Optional[List[str]] = [
     "xodstr02@stud.feec.vutbr.cz",
 ]
 
-ORGANIZATION_NAME: Optional[Union[str, List[str]]] = [
-    "Pattern Recognition Lab, Germany",
-    "Erlangen Graduate School in Advanced Optical Technologies, Germany",
-    "International Max Planck Research School for Optics and Imaging, Germany",
-    "University of Technology, Brno, Czech Republic",
-    "Department of Ophthalmology, Germany",
-    "Ophthalmology Clinic, Zlin, Czech Republic",
-]
-ORGANIZATION_URL: Optional[Union[str, List[str]]] = [
-    "https://lme.tf.fau.de/",
-    "https://www.saot.fau.de/",
-    "https://www.mpsd.mpg.de/imprs",
-    "https://www.vut.cz/",
-    "https://www.augenklinik.uk-erlangen.de/",
-    "https://www.whatclinic.com/eye-clinics/czech-republic/zlin/ocni-klinika-zlin",
-]
+ORGANIZATION_NAME: Optional[Union[str, List[str]]] = "GE-CZ joint research group"
+ORGANIZATION_URL: Optional[Union[str, List[str]]] = None
 
 # Set '__PRETEXT__' or '__POSTTEXT__' as a key with string value to add custom text. e.g. SLYTAGSPLIT = {'__POSTTEXT__':'some text}
 SLYTAGSPLIT: Optional[Dict[str, Union[List[str], str]]] = {
-    "__PRETEXT__": "Additionally, the images have ***healthy***, ***diabetic retinopathy*** and ***glaucomatous*** tags. They determine the patient's diagnosis"
+    "categories": ["healthy", "diabetic retinopathy", "glaucomatous"]
 }
+
 TAGS: Optional[List[str]] = None
 
 
