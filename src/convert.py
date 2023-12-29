@@ -84,6 +84,9 @@ def convert_and_upload_supervisely_project(
     def create_ann(image_path):
         labels = []
 
+        tag_meta = name_to_tag.get(get_file_name(image_path).split("_")[1])
+        tag = sly.Tag(tag_meta)
+
         mask_path = os.path.join(masks_path, get_file_name(image_path) + masks_ext)
         mask_np = sly.imaging.image.read(mask_path)[:, :, 0]
         img_height = mask_np.shape[0]
@@ -100,13 +103,21 @@ def convert_and_upload_supervisely_project(
         curr_label = sly.Label(curr_bitmap, vessels)
         labels.append(curr_label)
 
-        return sly.Annotation(img_size=(img_height, img_wight), labels=labels)
+        return sly.Annotation(img_size=(img_height, img_wight), labels=labels, img_tags=[tag])
 
     vessels = sly.ObjClass("vessels", sly.Bitmap)
     field = sly.ObjClass("field of view", sly.Bitmap)
 
+    healthy_meta = sly.TagMeta("healthy", sly.TagValueType.NONE)
+    diabetic_meta = sly.TagMeta("diabetic retinopathy", sly.TagValueType.NONE)
+    glaucomatous_meta = sly.TagMeta("glaucomatous", sly.TagValueType.NONE)
+
+    name_to_tag = {"h": healthy_meta, "dr": diabetic_meta, "g": glaucomatous_meta}
+
     project = api.project.create(workspace_id, project_name, change_name_if_conflict=True)
-    meta = sly.ProjectMeta(obj_classes=[vessels, field])
+    meta = sly.ProjectMeta(
+        obj_classes=[vessels, field], tag_metas=[healthy_meta, diabetic_meta, glaucomatous_meta]
+    )
     api.project.update_meta(project.id, meta.to_json())
 
     dataset = api.dataset.create(project.id, ds_name, change_name_if_conflict=True)

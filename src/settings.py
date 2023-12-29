@@ -53,27 +53,43 @@ CLASS2COLOR: Optional[Dict[str, List[str]]] = None
 
 # If you have more than the one paper, put the most relatable link as the first element of the list
 # Use dict key to specify name for a button
-PAPER: Optional[
-    Union[str, List[str], Dict[str, str]]
-] = "https://www5.informatik.uni-erlangen.de/Forschung/Publikationen/2011/Budai11-APD-talk.pdf"
-BLOGPOST: Optional[Union[str, List[str], Dict[str, str]]] = None
-REPOSITORY: Optional[Union[str, List[str], Dict[str, str]]] = {
-    "GitHub": "some_link_to_repo_if_exists"
+PAPER: Optional[Union[str, List[str], Dict[str, str]]] = {
+    "Poster": "https://www5.informatik.uni-erlangen.de/Forschung/Publikationen/2011/Budai11-APD-talk.pdf"
 }
+BLOGPOST: Optional[Union[str, List[str], Dict[str, str]]] = None
+REPOSITORY: Optional[Union[str, List[str], Dict[str, str]]] = None
 
 CITATION_URL: Optional[str] = None
-AUTHORS: Optional[List[str]] = ["Attila Budai", "Jan Odstrcilik"]
+AUTHORS: Optional[List[str]] = [
+    "Attila Budai",
+    "Jan Odstrcilik",
+    "R. Kollar",
+    "J. Hornegger",
+    "J. Jan",
+    "T. Kubena",
+    "G. Michelson",
+]
 AUTHORS_CONTACTS: Optional[List[str]] = [
     "attila.budai@informatik.uni-erlangen.de",
     "xodstr02@stud.feec.vutbr.cz",
 ]
 
 ORGANIZATION_NAME: Optional[Union[str, List[str]]] = [
-    "Pattern Recognition Lab (CS5)",
-    "Department of Ophthalmology, Friedrich-Alexander University Erlangen-Nuremberg (Germany)",
-    "Brno University of Technology, Faculty of Electrical Engineering and Comunnication, Department of Biomedical Engineering, Brno (Czech Republic)",
+    "Pattern Recognition Lab, Germany",
+    "Erlangen Graduate School in Advanced Optical Technologies, Germany",
+    "International Max Planck Research School for Optics and Imaging, Germany",
+    "University of Technology, Brno, Czech Republic",
+    "Department of Ophthalmology, Germany",
+    "Ophthalmology Clinic, Zlin, Czech Republic",
 ]
-ORGANIZATION_URL: Optional[Union[str, List[str]]] = None
+ORGANIZATION_URL: Optional[Union[str, List[str]]] = [
+    "https://lme.tf.fau.de/",
+    "https://www.saot.fau.de/",
+    "https://www.mpsd.mpg.de/imprs",
+    "https://www.vut.cz/",
+    "https://www.augenklinik.uk-erlangen.de/",
+    "https://www.whatclinic.com/eye-clinics/czech-republic/zlin/ocni-klinika-zlin",
+]
 
 # Set '__PRETEXT__' or '__POSTTEXT__' as a key with string value to add custom text. e.g. SLYTAGSPLIT = {'__POSTTEXT__':'some text}
 SLYTAGSPLIT: Optional[Dict[str, Union[List[str], str]]] = None
