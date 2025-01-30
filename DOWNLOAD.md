@@ -1,6 +1,6 @@
 Dataset **High Resolution Fundus** can be downloaded in [Supervisely format](https://developer.supervisely.com/api-references/supervisely-annotation-json-format):
 
- [Download](https://www.dropbox.com/scl/fi/la9sfqqv7uradesxws1rz/high-resolution-fundus-DatasetNinja.tar?rlkey=pyfo3vrbigihwbd5qr2jldp2r&dl=1)
+ [Download](https://assets.supervisely.com/remote/eyJsaW5rIjogImZzOi8vYXNzZXRzLzMyNTZfSGlnaCBSZXNvbHV0aW9uIEZ1bmR1cy9oaWdoLXJlc29sdXRpb24tZnVuZHVzLURhdGFzZXROaW5qYS50YXIiLCAic2lnIjogIitIVCtPNU05eHRZNk9XV3craFNpZGxlMjdEYXgzci9YWldnbjhqcjZDMm89In0=)
 
 As an alternative, it can be downloaded with *dataset-tools* package:
 ``` bash
